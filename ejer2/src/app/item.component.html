@@ -1,0 +1,8 @@
+<div>
+<input type="checkbox" [(ngModel)]="item.checked">
+<span
+  [style.textDecoration]="item.checked?'line-through':'none'">
+  {{item.description}}
+</span>
+<button (click)="fireRemove()">Delete</button>
+</div>

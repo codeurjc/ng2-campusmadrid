@@ -1,0 +1,29 @@
+<style>
+    .orange {
+        color: orange;
+    }
+</style>
+
+<h1 [class]="className">Hello {{name}}!</h1>
+
+<h1 [class.red]="redActive">Hello {{name}}!</h1>
+
+<button (click)="setClass('red')">Red</button>
+<button (click)="setClass('blue')">Blue</button>
+<button (click)="setClass('yellow')">Yellow</button>
+<button (click)="setClass('orange')">Orange</button>
+
+<br>
+
+<button (click)="showText()">Show text</button>
+<button (click)="changeParagraph()">Change Paragraph</button>
+
+<p *ngIf="visible">Text</p>
+<p *ngIf="num == 3">Num 3</p>
+<p [ngClass]="pClasses">Text</p>
+
+<div *ngFor="let elem of elems">{{elem.desc}}</div>
+
+<template ngFor let-elem [ngForOf]="elems">
+    <li *ngIf="elem.check">{{elem.desc}}</li>
+</template>

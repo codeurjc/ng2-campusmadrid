@@ -1,0 +1,14 @@
+<h1>A checklist</h1>
+
+<div *ngFor="let item of items">
+  <input type="checkbox" [(ngModel)]="item.checked">
+  <span
+    [style.textDecoration]="item.checked?'line-through':'none'">
+    {{item.description}}
+  </span>
+  <button (click)="removeItem(item)">Delete</button>
+</div>
+
+<hr>
+<input #desc type='text'>
+<button (click)="addItem(desc.value); desc.value=''">Add</button>
